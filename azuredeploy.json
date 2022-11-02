@@ -445,7 +445,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "https://raw.githubusercontent.com/mobilesuit/azureztnatemplate/main/azuredeploysingle.json",
+	  "uri": "https://raw.githubusercontent.com/mobilesuitzero/azureztnatemplate/main/azuredeploysingle.json",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
