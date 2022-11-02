@@ -438,7 +438,7 @@
     {
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2020-10-01",
-      "name": "FGT ZTNA deployment",
+      "name": "FGT-ZTNA-deployment",
       "dependsOn": [
         "[variables('vnetName')]"
       ],
