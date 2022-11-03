@@ -491,7 +491,7 @@
 	},
 	"PublicIP": {
 		"type": "string",
-		"value": "[reference(resourceId('Microsoft.Network/publicIPAddresses', variables('publicIpName'))).ipAddress]"
+		"value": "[reference(resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIp1Name'))).ipAddress]"
 	}	
   }
 }
