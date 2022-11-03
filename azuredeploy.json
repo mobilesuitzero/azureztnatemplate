@@ -390,7 +390,7 @@
     "customDataFirewallAccessProxy": "[concat('config firewall access-proxy\nedit \"ZTNAServer\"\nset client-cert disable\nset vip \"ZTNAServer\"\nconfig api-gateway\nedit 1\nconfig realservers\nedit 1\nset ip ', parameters('backendWebServer'), '\nnext\nend\nnext\nend\nnext\nend\n')]",
     "customDataFirewallProxyPolicy": "[concat('config firewall proxy-policy\nedit 1\nset name \"ZTNA Web Server\"\nset proxy access-proxy\nset access-proxy \"ZTNAServer\"\nset srcintf \"port1\"\nset srcaddr \"all\"\nset dstaddr \"WebServer\"\nset action accept\nset schedule \"always\"\nset logtraffic all\nset groups \"sslvpn_group\"\nnext\nend\n')]",
     "customDataAuthentication": "[concat('config authentication scheme\nedit \"ZTNA\"\nset method basic\nset user-database \"local-user-db\"\nnext\nend\nconfig authentication rule\nedit \"ZTNA\"\nset srcintf \"port1\"\nset srcaddr \"all\"\nset ip-based disable\nset active-auth-method \"ZTNA\"\nnext\nend\n')]",
-    "customDataEndPoint": "[concat('config endpoint-control fctems\nedit \"ems\"\nset fortinetone-cloud-authentication enable\nnext\nend\n')]",
+    "customDataEndPoint": "[concat('config endpoint-control fctems\nedit \"1\"\nset fortinetone-cloud-authentication enable\nnext\nend\n')]",
     "customDataCombined": "[concat(variables('customDataSystemGlobal'),variables('customDataFirewallAddress'),variables('customDataFirewallAddressGroup'),variables('customDataUserLocal'),variables('customDataUserGroup'),variables('customDataFirewallAddress'), variables('customDataFirewallVip'),variables('customDataFirewallAccessProxy'),variables('customDataFirewallProxyPolicy'),variables('customDataAuthentication'),variables('customDataEndPoint'),parameters('fortiGateAdditionalCustomData'))]"
   },
   "resources": [
