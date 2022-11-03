@@ -483,5 +483,15 @@
         }
       }
     }
-  ]
+  ],
+  "outputs": {
+	"AdminUsername" : {
+		"type": "string",
+		"value": "[parameters('adminUsername')]"
+	},
+	"PublicIP": {
+		"type": "string",
+		"value": "[reference(resourceId('Microsoft.Network/publicIPAddresses', variables('publicIpName'))).ipAddress]"
+	}	
+  }
 }
