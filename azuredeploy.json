@@ -381,9 +381,9 @@
   },
   "variables": {
     "vnetName": "[if(equals(parameters('vnetName'),''),concat(parameters('fortiGateNamePrefix'),'-VNET'),parameters('vnetName'))]",
-    "customDataSystemGlobal": "[concat('config system global\nset admin-sport ', parameters('fortiGateAdminPort'), 'end')]",
+    "customDataSystemGlobal": "[concat('config system global\nset admin-sport ', parameters('fortiGateAdminPort'), '\nend\n')]",
     "customDataFirewallAddress": "[concat('config firewall address\nedit webserver1\nset subnet ', parameters('backendWebServer'), ' 255.255.255.255\nnext\nend\n')]",
-    "customDataFirewallAddressGroup": "[concat('config firewall addrgrp\nedit \"Webserver\"\nset member \"webserver1\"\nnext\nend')]",
+    "customDataFirewallAddressGroup": "[concat('config firewall addrgrp\nedit \"Webserver\"\nset member \"webserver1\"\nnext\nend\n')]",
     "customDataUserLocal": "[concat('config user local\nedit ', parameters('ztnaUsername'), '\nset type password\nset passwd ', parameters('ztnaPassword'), '\nnext\nend\n')]",
     "customDataUserGroup": "[concat('config user group\nedit \"sslvpn_group\"\nset member ', parameters('ztnaUsername'), '\nnext\nend\n')]",
     "customDataFirewallVip": "[concat('config firewall vip\nedit \"ZTNAServer\"\nset type access-proxy\nset extip ', parameters('subnet1StartAddress'), '\nset extintf \"port1\"\nset server-type https\nset extport 9443\nset ssl-certificate \"Fortinet_Factory\"\nnext\nend\n')]",
