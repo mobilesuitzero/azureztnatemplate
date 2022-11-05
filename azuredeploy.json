@@ -485,9 +485,17 @@
     }
   ],
   "outputs": {
-	"AdminUsername" : {
+	"AdminUserName" : {
 		"type": "string",
 		"value": "[parameters('adminUsername')]"
+	},
+	"AdminUserPassword" : {
+		"type": "string",
+		"value": "[parameters('adminPassword')]"
+	},
+	"ZTNAUsername" : {
+		"type": "string",
+		"value": "[parameters('ztnaUsername')]"
 	},
 	"ZTNAApplicationLoginURL": {
 		"type": "string",
