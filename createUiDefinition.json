@@ -649,6 +649,17 @@
         },
         "elements": [
           {
+            "name": "ZTNAHTTPSAccessPort",
+            "type": "Microsoft.Common.TextBox",
+            "label": "ZTNA HTTPS Access Port",
+            "defaultValue": "9443",
+            "toolTip": "ZTNA HTTPS Access Port",
+            "constraints": {
+              "required": true
+            },
+            "visible": true
+          },
+          {
             "name": "backendWebServer",
             "type": "Microsoft.Common.TextBox",
             "label": "Backend WebServer",
@@ -968,6 +979,7 @@
       "fortiGateAdditionalCustomData": "[steps('advanced').customdata.config]",
       "fortiGateAdminPort": "[steps('advanced').fortigateadminport.value]",
       "backendWebServer": "[steps('ztna').backendWebServer]",
+      "ZTNAHTTPSAccessPort": "[steps('ztna').ZTNAHTTPSAccessPort]",
       "ztnaUsername": "[steps('ztna').username]",
       "ztnaPassword": "[steps('ztna').password]"
     }
